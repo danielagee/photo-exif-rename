@@ -1,4 +1,4 @@
-# Day 42 - Extract just the date tag
+# Day 43 - Slice the string to extract year, month, day.
 
 # Import the ExifRead package.
 import exifread
@@ -10,4 +10,9 @@ with open('C:\\Python\\image1.jpg', 'rb') as image_file:
     tags = exifread.process_file(image_file, stop_tag="EXIF DateTimeOriginal")
     dateTaken = tags["EXIF DateTimeOriginal"]
 
-print(dateTaken)
+year = str(dateTaken)[0:4]
+print(year)
+month = str(dateTaken)[5:7]
+print(month)
+day = str(dateTaken)[8:10]
+print(day)
